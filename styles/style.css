@@ -1,0 +1,28 @@
+body {
+  background-color: #3f2860;
+  font-size: 64px;
+  min-height: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+i {
+  color: #ef6d3b;
+  padding: 0 20px;
+  text-shadow: 5px 10px black;
+  transition: all 0.5s ease;
+}
+
+i:hover {
+  color:  #fa8b60;
+  cursor: pointer;
+  transform: scale(1.15, 1.15);
+}
