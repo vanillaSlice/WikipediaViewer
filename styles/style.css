@@ -11,6 +11,8 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 button {
@@ -20,7 +22,7 @@ button {
   border: none;
   text-shadow: 5px 10px #000;
   -webkit-transition: color 0.5s linear, 
-              -webkit-transform 0.5s linear;
+                      -webkit-transform 0.5s linear;
   transition: color 0.5s linear, 
               -webkit-transform 0.5s linear;
   transition: color 0.5s linear, 
@@ -29,7 +31,7 @@ button {
               transform 0.5s linear, 
               -webkit-transform 0.5s linear;
   cursor: pointer;
-  margin: 0 20px;
+  margin: 10px 20px;
   outline: none;
 }
 
@@ -37,8 +39,80 @@ button:hover,
 button:focus {
   color: #fa8b60;
   -webkit-transform: scale(1.14, 1.14);
-          transform: scale(1.14, 1.14);
+  transform: scale(1.14, 1.14);
   text-decoration: none;
 }
 
+button:disabled:hover,
+button:disabled:focus {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+button:disabled {
+  color: #808080;
+}
+
 /* done up to here */
+#search-box {
+  font-size: 32px;
+  background-color: transparent;
+  border: solid 5px #ef6d3b;
+  border-radius: 50px;
+  box-shadow: 5px 10px #000;
+  color: #ef6d3b;
+  outline: none;
+    -webkit-transition: color 0.5s linear, 
+                      -webkit-transform 0.5s linear;
+  transition: color 0.5s linear, 
+              -webkit-transform 0.5s linear;
+  transition: color 0.5s linear, 
+              transform 0.5s linear;
+  transition: color 0.5s linear, 
+              transform 0.5s linear, 
+              -webkit-transform 0.5s linear;
+}
+
+#search-box:focus {
+  border-color: #fa8b60;
+  color: #fa8b60;
+  -webkit-transform: scale(1.14, 1.14);
+  transform: scale(1.14, 1.14);
+}
+
+#search-box::-webkit-input-placeholder {
+  color: #808080;
+}
+
+.hidden {
+  display: none;
+}
+
+#results-container {
+  margin-top: 20px;
+  color: #ef6d3b;
+}
+
+.search-result:hover {
+  border-color: #fa8b60;
+  color: #fa8b60;
+  -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
+}
+
+.search-result {
+  border-radius: 5px;
+  margin-top: 20px;
+  border: solid 5px #ef6d3b;
+  box-shadow: 5px 10px #000;
+      -webkit-transition: color 0.5s linear, 
+                      -webkit-transform 0.5s linear;
+  transition: color 0.5s linear, 
+              -webkit-transform 0.5s linear;
+  transition: color 0.5s linear, 
+              transform 0.5s linear;
+  transition: color 0.5s linear, 
+              transform 0.5s linear, 
+              -webkit-transform 0.5s linear;
+  cursor: pointer;
+}
