@@ -46,6 +46,7 @@ body {
 
 button,
 #search-box,
+#results,
 .search-result {
   background-color: transparent;
   color: #ef6d3b;
@@ -63,6 +64,20 @@ button:focus,
 button:disabled,
 #search-box::-webkit-input-placeholder {
   color: #808080;
+}
+
+button[disabled] {
+  color: #808080;
+}
+
+#search-box:-moz-placeholder {
+  color: #808080;
+  opacity: 1;
+}
+
+#search-box::-moz-placeholder {
+  color: #808080;
+  opacity: 1;
 }
 
 #search-box,
@@ -87,8 +102,7 @@ button {
   Scaling
 */
 button:hover,
-button:focus,
-#search-box:focus {
+button:focus {
   -webkit-transform: scale(1.14);
   transform: scale(1.14);
 }
@@ -99,6 +113,7 @@ button:disabled:focus {
   transform: scale(1);
 }
 
+#search-box:focus,
 .search-result:hover,
 .search-result:focus {
   -webkit-transform: scale(1.05);
@@ -108,17 +123,16 @@ button:disabled:focus {
 /*
   Outlines
 */
-button,
-#search-box,
-.search-result {
+button:focus,
+#search-box:focus,
+.search-result:focus {
   outline: none;
 }
 
 /*
   Cursors
 */
-button,
-.search-result {
+button {
   cursor: pointer;
 }
 
@@ -169,23 +183,24 @@ button {
   margin: 0 20px;
 }
 
+.search-result:hover,
+.search-result:focus,
+.search-result:visited,
 button:hover,
 button:focus {
   text-decoration: none;
 }
 
-#search-form-container {
-  margin-top: 20px;
-}
-
-#results-container {
+#search-form-container,
+#results-container,
+.search-result {
   margin-top: 20px;
 }
 
 .search-result {
-  margin-top: 20px;
   padding: 0 20px;
   text-align: left;
+  display: block;
 }
 
 .search-result p {
