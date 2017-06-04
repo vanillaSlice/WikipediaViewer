@@ -1,5 +1,16 @@
+/*
+  Colours:
+    Purple       - #3f2860
+    Dark orange  - #ef6d3b
+    Light orange - #fa8b60
+    Black        - #000
+    Grey         - #808080
+*/
+
+/*
+  Standard body properties
+*/
 body {
-  background-color: #3f2860;
   min-height: 100%;
   min-height: 100vh;
   display: -webkit-box;
@@ -15,104 +26,175 @@ body {
   padding-bottom: 20px;
 }
 
+/*
+  Font sizes
+*/
 button {
   font-size: 64px;
-  color: #ef6d3b;
+}
+
+#search-box {
+  font-size: 32px;
+}
+
+/*
+  Colours
+*/
+body {
+  background-color: #3f2860;
+}
+
+button,
+#search-box,
+.search-result {
   background-color: transparent;
-  border: none;
-  text-shadow: 5px 10px #000;
-  -webkit-transition: color 0.5s linear, 
-                      -webkit-transform 0.5s linear;
-  transition: color 0.5s linear, 
-              -webkit-transform 0.5s linear;
-  transition: color 0.5s linear, 
-              transform 0.5s linear;
-  transition: color 0.5s linear, 
-              transform 0.5s linear, 
-              -webkit-transform 0.5s linear;
-  cursor: pointer;
-  margin: 10px 20px;
-  outline: none;
+  color: #ef6d3b;
 }
 
 button:hover,
-button:focus {
+button:focus,
+#search-box:focus,
+.search-result:hover,
+.search-result:focus {
   color: #fa8b60;
-  -webkit-transform: scale(1.14, 1.14);
-  transform: scale(1.14, 1.14);
-  text-decoration: none;
-}
-
-button:disabled:hover,
-button:disabled:focus {
-  -webkit-transform: scale(1, 1);
-  transform: scale(1, 1);
-}
-
-button:disabled {
-  color: #808080;
-}
-
-/* done up to here */
-#search-box {
-  font-size: 32px;
-  background-color: transparent;
-  border: solid 5px #ef6d3b;
-  border-radius: 50px;
-  box-shadow: 5px 10px #000;
-  color: #ef6d3b;
-  outline: none;
-    -webkit-transition: color 0.5s linear, 
-                      -webkit-transform 0.5s linear;
-  transition: color 0.5s linear, 
-              -webkit-transform 0.5s linear;
-  transition: color 0.5s linear, 
-              transform 0.5s linear;
-  transition: color 0.5s linear, 
-              transform 0.5s linear, 
-              -webkit-transform 0.5s linear;
-}
-
-#search-box:focus {
   border-color: #fa8b60;
-  color: #fa8b60;
-  -webkit-transform: scale(1.14, 1.14);
-  transform: scale(1.14, 1.14);
 }
 
+button:disabled,
 #search-box::-webkit-input-placeholder {
   color: #808080;
 }
 
-.hidden {
-  display: none;
-}
-
-#results-container {
-  margin-top: 20px;
-  color: #ef6d3b;
-}
-
-.search-result:hover {
-  border-color: #fa8b60;
-  color: #fa8b60;
-  -webkit-transform: scale(1.05, 1.05);
-  transform: scale(1.05, 1.05);
-}
-
+#search-box,
 .search-result {
-  border-radius: 5px;
-  margin-top: 20px;
-  border: solid 5px #ef6d3b;
-  box-shadow: 5px 10px #000;
-      -webkit-transition: color 0.5s linear, 
+  border-color: #ef6d3b;
+}
+
+/*
+  Shadows
+*/
+button {
+  text-shadow: 5px 10px #000;
+}
+
+#search-box,
+.search-result {
+  -webkit-box-shadow: 5px 10px #000;
+          box-shadow: 5px 10px #000;
+}
+
+/*
+  Scaling
+*/
+button:hover,
+button:focus,
+#search-box:focus {
+  -webkit-transform: scale(1.14);
+  transform: scale(1.14);
+}
+
+button:disabled:hover,
+button:disabled:focus {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.search-result:hover,
+.search-result:focus {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+/*
+  Outlines
+*/
+button,
+#search-box,
+.search-result {
+  outline: none;
+}
+
+/*
+  Cursors
+*/
+button,
+.search-result {
+  cursor: pointer;
+}
+
+/*
+  Transitions
+*/
+button,
+#search-box,
+.search-result {
+  -webkit-transition: color 0.5s linear, 
                       -webkit-transform 0.5s linear;
   transition: color 0.5s linear, 
+              -webkit-transform 0.5s linear;
+  -webkit-transition: color 0.5s linear, 
               -webkit-transform 0.5s linear;
   transition: color 0.5s linear, 
               transform 0.5s linear;
   transition: color 0.5s linear, 
               transform 0.5s linear, 
               -webkit-transform 0.5s linear;
-  cursor: pointer;
+}
+
+/*
+  Borders
+*/
+button {
+  border: none;
+}
+
+#search-box,
+.search-result {
+  border-style: solid;
+  border-width: 5px;
+}
+
+#search-box {
+  border-radius: 50px;
+}
+
+.search-result {
+  border-radius: 5px;
+}
+
+/*
+  Specific styles
+*/
+button {
+  margin: 0 20px;
+}
+
+button:hover,
+button:focus {
+  text-decoration: none;
+}
+
+#search-form-container {
+  margin-top: 20px;
+}
+
+#results-container {
+  margin-top: 20px;
+}
+
+.search-result {
+  margin-top: 20px;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.search-result p {
+  margin-bottom: 20px;
+}
+
+/*
+  Helper classes
+*/
+.hidden {
+  display: none;
 }

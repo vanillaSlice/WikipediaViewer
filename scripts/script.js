@@ -8,8 +8,8 @@ $(document).ready(() => {
                    "search&format=json&gsrsearch=";
   
   $("#search-button").click(() => {
-    $("#search-button").attr('disabled','disabled');
-    $("#search-form-container").fadeIn().removeClass("hidden");
+    $("#search-button").attr("disabled", true);
+    $("#search-form-container").addClass("animated fadeIn").removeClass("hidden");
   });
   
   $("#random-button").click(() => window.open(randomURL));
@@ -25,15 +25,14 @@ $(document).ready(() => {
       dataType: "jsonp",
       url: queryURL + encodeURIComponent($("#search-box").val()),
       success: function(data) {
-        $("#results-container").empty();
+        var resultsContainer = $("#results-container");
+        resultsContainer.empty().removeClass("hidden");
+        var results = $("<div>", {"id": "results", "class": "animated slideInUp"});
+        results.appendTo(resultsContainer);
         var pages = data.query.pages;
         for (let page in pages) {
-          $(("<div class='search-result'>" + pages[page].extract + "</div>")).addClass("hidden").appendTo("#results-container");
+          $("<div class='search-result' tabindex='0'><h2>" + pages[page].title + "</h2><p>" + pages[page].extract + "</p></div>").appendTo(results);
         }
-        $(".search-result").each(function (index) {
-          $(this).delay(index * 500).removeClass("hidden").fadeIn();
-        });
-        $("#results-container").removeClass("hidden");
       }
     });
   };
