@@ -7,9 +7,11 @@
     Grey         - #808080
 */
 
+
 /*
   Standard body properties
 */
+
 body {
   min-height: 100%;
   min-height: 100vh;
@@ -26,9 +28,11 @@ body {
   padding-bottom: 20px;
 }
 
+
 /*
   Font sizes
 */
+
 button {
   font-size: 64px;
 }
@@ -37,9 +41,11 @@ button {
   font-size: 32px;
 }
 
+
 /*
   Colours
 */
+
 body {
   background-color: #3f2860;
 }
@@ -85,9 +91,11 @@ button[disabled] {
   border-color: #ef6d3b;
 }
 
+
 /*
   Shadows
 */
+
 button {
   text-shadow: 5px 10px #000;
 }
@@ -95,12 +103,14 @@ button {
 #search-box,
 .search-result {
   -webkit-box-shadow: 5px 10px #000;
-          box-shadow: 5px 10px #000;
+  box-shadow: 5px 10px #000;
 }
+
 
 /*
   Scaling
 */
+
 button:hover,
 button:focus {
   -webkit-transform: scale(1.14);
@@ -120,44 +130,46 @@ button:disabled:focus {
   transform: scale(1.05);
 }
 
+
 /*
   Outlines
 */
+
 button:focus,
 #search-box:focus,
 .search-result:focus {
   outline: none;
 }
 
+
 /*
   Cursors
 */
+
 button {
   cursor: pointer;
 }
 
+
 /*
   Transitions
 */
+
 button,
 #search-box,
 .search-result {
-  -webkit-transition: color 0.5s linear, 
-                      -webkit-transform 0.5s linear;
-  transition: color 0.5s linear, 
-              -webkit-transform 0.5s linear;
-  -webkit-transition: color 0.5s linear, 
-              -webkit-transform 0.5s linear;
-  transition: color 0.5s linear, 
-              transform 0.5s linear;
-  transition: color 0.5s linear, 
-              transform 0.5s linear, 
-              -webkit-transform 0.5s linear;
+  -webkit-transition: color 0.5s linear, -webkit-transform 0.5s linear;
+  transition: color 0.5s linear, -webkit-transform 0.5s linear;
+  -webkit-transition: color 0.5s linear, -webkit-transform 0.5s linear;
+  transition: color 0.5s linear, transform 0.5s linear;
+  transition: color 0.5s linear, transform 0.5s linear, -webkit-transform 0.5s linear;
 }
+
 
 /*
   Borders
 */
+
 button {
   border: none;
 }
@@ -176,9 +188,11 @@ button {
   border-radius: 5px;
 }
 
+
 /*
   Specific styles
 */
+
 button {
   margin: 0 20px;
 }
@@ -207,9 +221,11 @@ button:focus {
   margin-bottom: 20px;
 }
 
+
 /*
   Helper classes
 */
+
 .hidden {
   display: none;
 }
