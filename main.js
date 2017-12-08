@@ -1,60 +1,81 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
-  "use strict";
+  'use strict';
 
-  var randomURL = "https://en.wikipedia.org/wiki/Special:Random",
-    queryURL = "https://en.wikipedia.org/w/api.php?action=query" +
-    "&prop=extracts&exintro=true&exsentences=1&explaintext=true" +
-    "&generator=search&format=json&gsrsearch=",
-    wikipediaURL = "https://en.wikipedia.org/wiki/",
-    searchButton = $('.wiki-viewer__search-btn'),
-    searchBox = $('.wiki-viewer__search-input'),
-    resultsContainer = $('.wiki-viewer__results-container');
+  /*
+   * URLs.
+   */
+  var wikipediaURL = 'https://en.wikipedia.org/wiki/';
+  var queryURL = 'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=true&exsentences=1&explaintext=true&generator=search&format=json&gsrsearch=';
+  var randomURL = 'https://en.wikipedia.org/wiki/Special:Random';
 
-  searchButton.click(function () {
-    searchButton.attr("disabled", true);
-    $('.wiki-viewer__search-form-container').addClass("animated fadeIn").removeClass("hidden");
+  /*
+   * DOM elements.
+   */
+  var searchBtnElement = $('.wiki-viewer__search-btn');
+  var randomBtnElement = $('.wiki-viewer__random-btn');
+  var searchFormContainerElement = $('.wiki-viewer__search-form-container');
+  var searchFormElement = $('.wiki-viewer__search-form');
+  var searchInputElement = $('.wiki-viewer__search-input');
+  var resultsContainerElement = $('.wiki-viewer__results-container');
+
+  // show search form on search button click
+  searchBtnElement.click(function() {
+    searchBtnElement.attr('disabled', true);
+    searchFormContainerElement.addClass('animated fadeIn').removeClass('hidden');
   });
 
-  $('.wiki-viewer__random-btn').click(function () {
+  // open random wiki entry on random button click
+  randomBtnElement.click(function() {
     window.open(randomURL);
   });
 
-  $('.wiki-viewer__search-form').submit(function (event) {
+  // perform search on search form submit
+  searchFormElement.submit(function(event) {
     event.preventDefault();
-    searchBox.blur();
+    searchInputElement.blur();
     handleSearch();
   });
 
   function handleSearch() {
     $.ajax({
-      dataType: "jsonp",
-      url: queryURL + encodeURIComponent(searchBox.val()),
+      dataType: 'jsonp',
+      url: queryURL + encodeURIComponent(searchInputElement.val()),
       success: handleSuccess,
       error: handleError
     });
   }
 
   function handleSuccess(data) {
-    resultsContainer.empty().removeClass("hidden");
+    // make sure we unhide the results container
+    resultsContainerElement.empty().removeClass('hidden');
 
-    var results = $("<div>", {
-      "class": "animated slideInUp wiki-viewer__search-results"
-    });
-    results.appendTo(resultsContainer);
+    // create div to append each search result to
+    var results = $('<div class="animated slideInUp wiki-viewer__search-results">');
 
-    if (data.query === undefined || data.query.pages === undefined) {
-      results.append("No results returned");
-    } else {
-      var pages = data.query.pages;
-      for (var key in pages) {
-        if (pages.hasOwnProperty(key)) {
-          var page = pages[key],
-            href = wikipediaURL + page.title.replace(" ", "_");
-          $("<a class='wiki-viewer__search-result' href='" + href + "' target='_blank'>" +
-            "<div><h2>" + page.title + "</h2><p class='wiki-viewer__search-result-extract'>" + page.extract + "</p></div>" +
-            "</a>").appendTo(results);
-        }
+    results.appendTo(resultsContainerElement);
+
+    // no results could be found
+    if (!data.query || !data.query.pages) {
+      results.append('No results returned');
+      return;
+    }
+    
+    // append each result to results
+    var pages = data.query.pages;
+    for (var key in pages) {
+      if (pages.hasOwnProperty(key)) {
+        var page = pages[key];
+        var href = wikipediaURL + page.title.replace(" ", "_");
+
+        results.append(
+          '<a class="wiki-viewer__search-result" href="' + href + '" target="_blank">' +
+            '<div>' + 
+              '<h2>' + page.title + '</h2>' + 
+              '<p class="wiki-viewer__search-result-extract">' + page.extract + '</p>' + 
+            '</div>' +
+          '</a>'
+        );
       }
     }
   }
