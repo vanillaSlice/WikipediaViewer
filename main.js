@@ -7,20 +7,20 @@ $(document).ready(function () {
     "&prop=extracts&exintro=true&exsentences=1&explaintext=true" +
     "&generator=search&format=json&gsrsearch=",
     wikipediaURL = "https://en.wikipedia.org/wiki/",
-    searchButton = $("#search-button"),
-    searchBox = $("#search-box"),
-    resultsContainer = $("#results-container");
+    searchButton = $('.wiki-viewer__search-btn'),
+    searchBox = $('.wiki-viewer__search-input'),
+    resultsContainer = $('.wiki-viewer__results-container');
 
   searchButton.click(function () {
     searchButton.attr("disabled", true);
-    $("#search-form-container").addClass("animated fadeIn").removeClass("hidden");
+    $('.wiki-viewer__search-form-container').addClass("animated fadeIn").removeClass("hidden");
   });
 
-  $("#random-button").click(function () {
+  $('.wiki-viewer__random-btn').click(function () {
     window.open(randomURL);
   });
 
-  $("#search-form").submit(function (event) {
+  $('.wiki-viewer__search-form').submit(function (event) {
     event.preventDefault();
     searchBox.blur();
     handleSearch();
@@ -39,8 +39,7 @@ $(document).ready(function () {
     resultsContainer.empty().removeClass("hidden");
 
     var results = $("<div>", {
-      "id": "results",
-      "class": "animated slideInUp"
+      "class": "animated slideInUp wiki-viewer__search-results"
     });
     results.appendTo(resultsContainer);
 
@@ -52,8 +51,8 @@ $(document).ready(function () {
         if (pages.hasOwnProperty(key)) {
           var page = pages[key],
             href = wikipediaURL + page.title.replace(" ", "_");
-          $("<a class='search-result' href='" + href + "' target='_blank'>" +
-            "<div><h2>" + page.title + "</h2><p>" + page.extract + "</p></div>" +
+          $("<a class='wiki-viewer__search-result' href='" + href + "' target='_blank'>" +
+            "<div><h2>" + page.title + "</h2><p class='wiki-viewer__search-result-extract'>" + page.extract + "</p></div>" +
             "</a>").appendTo(results);
         }
       }

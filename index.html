@@ -13,28 +13,33 @@
   <link rel="manifest" href="./manifest.json">
   <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
   <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" type="text/css" href="./main.css">
 </head>
 
 <body class="container-fluid text-center">
-  <div class="container row">
-    <div class="col-xs-12" id="button-container">
-      <button type="button" id="search-button"><i class="fa fa-search"></i></button>
-      <button type="button" id="random-button"><i class="fa fa-random"></i></button>
+
+  <div class="wiki-viewer container row">
+    <div class="wiki-viewer__btn-container">
+      <button type="button" class="wiki-viewer__btn wiki-viewer__search-btn">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="wiki-viewer__btn wiki-viewer__random-btn">
+        <i class="fa fa-random" aria-hidden="true"></i>
+      </button>
     </div>
-    <div class="col-xs-12 col-md-8 col-md-offset-2 hidden" id="search-form-container">
-      <form id="search-form" autocomplete="off">
-        <input type="search" id="search-box" class="col-xs-12" placeholder="Search..." autofocus>
+    <div class="col-md-8 col-md-offset-2 hidden wiki-viewer__search-form-container">
+      <form class="wiki-viewer__search-form" autocomplete="off">
+        <input type="search" class="col-xs-12 wiki-viewer__search-input" placeholder="Search..." autofocus>
       </form>
     </div>
-    <div class="col-xs-12 hidden" id="results-container">
-    </div>
+    <div class="col-xs-12 hidden wiki-viewer__results-container"></div>
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="./main.js"></script>
 </body>
 
