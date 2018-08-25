@@ -21,8 +21,7 @@ body {
 
 .wiki-viewer {
   margin: auto;
-  padding: 30px 0 50px;
-  width: 100%;
+  padding: 30px 0;
 }
 
 .wiki-viewer__btn {
@@ -32,6 +31,7 @@ body {
   cursor: pointer;
   font-size: 64px;
   margin: 0 20px;
+  padding: 20px;
   text-shadow: 5px 10px #000;
   -webkit-transition: color 0.5s linear, -webkit-transform 0.5s linear;
           transition: color 0.5s linear, -webkit-transform 0.5s linear;
