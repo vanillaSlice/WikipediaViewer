@@ -20,26 +20,20 @@ body {
   cursor: pointer;
   font-size: 64px;
   margin: 0 20px;
+  outline: none;
   padding: 20px;
-  text-shadow: 5px 10px #000;
   transition: color 0.5s linear, transform 0.5s linear;
 }
 
 .wiki-viewer__btn:hover,
 .wiki-viewer__btn:focus {
-  border-color: #fa8b60;
   color: #fa8b60;
-  text-decoration: none;
   transform: scale(1.14);
 }
 
 .wiki-viewer__btn:disabled,
 .wiki-viewer__btn[disabled] {
   color: #808080;
-}
-
-.wiki-viewer__btn:focus {
-  outline: none;
 }
 
 .wiki-viewer__btn:disabled:hover,
@@ -55,14 +49,12 @@ body {
 
 .wiki-viewer__search-input {
   background-color: transparent;
-  border-color: #ef6d3b;
-  box-shadow: 5px 10px #000;
+  border: #ef6d3b solid 5px;
   border-radius: 50px;
-  border-style: solid;
-  border-width: 5px;
   color: #ef6d3b;
   font-size: 32px;
   padding: 10px 20px;
+  outline: none;
   overflow: hidden;
   transition: color 0.5s linear, transform 0.5s linear;
 }
@@ -79,7 +71,6 @@ body {
 .wiki-viewer__search-input:focus {
   border-color: #fa8b60;
   color: #fa8b60;
-  outline: none;
   transform: scale(1.05);
 }
 
@@ -88,17 +79,12 @@ body {
 }
 
 .wiki-viewer__search-results {
-  background-color: transparent;
   color: #ef6d3b;
 }
 
 .wiki-viewer__search-result {
-  background-color: transparent;
-  border-color: #ef6d3b;
+  border: #ef6d3b solid 5px;
   border-radius: 5px;
-  border-style: solid;
-  border-width: 5px;
-  box-shadow: 5px 10px #000;
   color: #ef6d3b;
   display: block;
   margin-top: 20px;
@@ -117,11 +103,8 @@ body {
 .wiki-viewer__search-result:hover,
 .wiki-viewer__search-result:focus,
 .wiki-viewer__search-result:visited {
-  text-decoration: none;
-}
-
-.wiki-viewer__search-result:focus {
   outline: none;
+  text-decoration: none;
 }
 
 .wiki-viewer__search-result-extract {

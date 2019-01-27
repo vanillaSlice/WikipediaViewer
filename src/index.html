@@ -17,32 +17,36 @@
   <meta name="msapplication-config" content="./browserconfig.xml">
   <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css"
+    integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" integrity="sha256-HtCCUh9Hkh//8U1OwcbD8epVEUdBvuI8wj1KtqMhNkI="
+    crossorigin="anonymous">
   <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body class="container-fluid text-center">
   <div class="wiki-viewer container row">
     <div class="wiki-viewer__btn-container">
-      <button type="button" class="wiki-viewer__btn wiki-viewer__search-btn">
-        <i class="fa fa-search" aria-hidden="true"></i>
+      <button class="wiki-viewer__btn wiki-viewer__search-btn js-search-btn" type="button">
+        <i class="fas fa-search"></i>
       </button>
-      <button type="button" class="wiki-viewer__btn wiki-viewer__random-btn">
-        <i class="fa fa-random" aria-hidden="true"></i>
+      <button class="wiki-viewer__btn wiki-viewer__random-btn js-random-btn" type="button">
+        <i class="fas fa-random"></i>
       </button>
     </div>
-    <div class="col-md-8 col-md-offset-2 hidden wiki-viewer__search-form-container">
-      <form class="wiki-viewer__search-form" autocomplete="off">
-        <input type="search" class="col-xs-12 wiki-viewer__search-input" placeholder="Search..." autofocus>
+    <div class="wiki-viewer__search-form-container col-md-8 col-md-offset-2 hidden js-search-form-container">
+      <form class="wiki-viewer__search-form js-search-form" autocomplete="off">
+        <input type="search" class="wiki-viewer__search-input col-xs-12 js-search-input" placeholder="Search..."
+          autofocus>
       </form>
     </div>
-    <div class="col-xs-12 hidden wiki-viewer__results-container"></div>
+    <div class="wiki-viewer__results-container col-xs-12 hidden js-results-container"></div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
   <script src="./scripts/index.js"></script>
 </body>
 
