@@ -1,5 +1,6 @@
 {
   "name": "Wikipedia Viewer",
+  "short_name": "Wikipedia Viewer",
   "icons": [{
       "src": "./android-chrome-192x192.png",
       "sizes": "192x192",
