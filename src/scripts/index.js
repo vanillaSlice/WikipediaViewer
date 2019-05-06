@@ -1,3 +1,5 @@
+import { version } from '../../package.json';
+
 /*
  * URLs
  */
@@ -16,6 +18,7 @@ const searchFormContainerElement = $('.js-search-form-container');
 const searchFormElement = $('.js-search-form');
 const searchInputElement = $('.js-search-input');
 const resultsContainerElement = $('.js-results-container');
+const versionElement = $('.js-version');
 
 /*
  * Functions
@@ -84,3 +87,4 @@ function handleSearchFormSubmit(e) {
 searchBtnElement.click(handleSearchBtnClick);
 randomBtnElement.click(handleRandomBtnClick);
 searchFormElement.submit(handleSearchFormSubmit);
+versionElement.text(version);
