@@ -10,7 +10,7 @@ A simple Wikipedia Viewer. A deployed version can be viewed [here](https://wikip
 
 ## Screenshot
 
-![Screenshot](/images/screenshot-1.png)
+![Screenshot](/images/screenshot-2.png)
 
 ## Getting Started
 
