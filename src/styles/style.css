@@ -131,6 +131,7 @@ body {
   color: #fa8b60;
   outline: none;
   text-decoration: none;
+  transition: color 0.5s linear;
 }
 
 @media(max-width: 768px) {
