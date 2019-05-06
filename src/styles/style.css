@@ -6,6 +6,7 @@ body {
   background-color: #3f2860;
   height: 100%;
   display: flex;
+  flex-direction: column;
 }
 
 .wiki-viewer {
@@ -109,6 +110,33 @@ body {
 
 .wiki-viewer__search-result-extract {
   margin-bottom: 20px;
+}
+
+.footer {
+  color: #ef6d3b;
+  margin: 15px auto;
+  padding: 15px 0;
+}
+
+.footer__text {
+  margin-bottom: 0;
+}
+
+.footer__link {
+  color: #ef6d3b;
+}
+
+.footer__link:focus,
+.footer__link:hover {
+  color: #fa8b60;
+  text-decoration: none;
+}
+
+@media(max-width: 768px) {
+  .wiki-viewer,
+  .footer {
+    width: 100%;
+  }
 }
 
 /*
