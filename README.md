@@ -6,7 +6,7 @@
 
 *Intermediate Front End Development Project for FreeCodeCamp.*
 
-A simple Wikipedia Viewer. A deployed version can be viewed [here](https://vanillaslice.github.io/WikipediaViewer/).
+A simple Wikipedia Viewer. A deployed version can be viewed [here](https://wikipediaviewer.mikelowe.xyz/).
 
 ## Screenshot
 
