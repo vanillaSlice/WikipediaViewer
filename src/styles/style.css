@@ -129,6 +129,7 @@ body {
 .footer__link:focus,
 .footer__link:hover {
   color: #fa8b60;
+  outline: none;
   text-decoration: none;
 }
 
