@@ -1,7 +1,7 @@
 # Wikipedia Viewer
 
 [![Latest Release](https://img.shields.io/github/release/vanillaSlice/WikipediaViewer.svg)](https://github.com/vanillaSlice/WikipediaViewer/releases/latest)
-[![Build Status](https://img.shields.io/travis/vanillaSlice/WikipediaViewer/master.svg)](https://travis-ci.org/vanillaSlice/WikipediaViewer)
+[![Build Status](https://img.shields.io/travis/com/vanillaSlice/WikipediaViewer/master.svg)](https://travis-ci.com/vanillaSlice/WikipediaViewer)
 [![License](https://img.shields.io/github/license/vanillaSlice/WikipediaViewer.svg)](LICENSE)
 
 *Intermediate Front End Development Project for FreeCodeCamp.*
